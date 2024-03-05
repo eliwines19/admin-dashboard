@@ -7,14 +7,13 @@ import { Header } from '../components'
 const Employees = () => {
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-    <Header category="Page" title="Employees" />
-    <GridComponent
-      width="auto"
-      dataSource={employeesData}
-      allowPaging
-      allowSearch
-      toolbar={['Search']}
-    >
+      <Header category="Page" title="Customers" />
+      <GridComponent
+        width="auto"
+        dataSource={employeesData}
+        allowPaging
+        toolbar={['Search']}
+      >
       <ColumnsDirective>
         {employeesGrid.map((item, index) => (
           <ColumnDirective key={index} {...item} />
