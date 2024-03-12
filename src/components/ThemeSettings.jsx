@@ -2,6 +2,7 @@ import React from 'react'
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck } from 'react-icons/bs'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
+import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
 
 import { themeColors } from '../data/dummy';
 
@@ -59,7 +60,9 @@ const ThemeSettings = () => {
           </div>
         </div>
 
-        <div className='flex-col border-t-1 border-color p-4 ml-4'>
+
+        {/* display is currently hidden */}
+        <div className='flex-col border-t-1 border-color p-4 ml-4 hidden'>
           <p className='font-semibold text-lg'>Theme Colors</p>
           <div className='flex gap-3'>
             {themeColors.map((item, index) => (
@@ -82,6 +85,18 @@ const ThemeSettings = () => {
             ))}
           </div>
         </div>
+        <div className='flex-col border-t-1 border-color p-4 ml-4'>
+          <p className='font-semibold text-lg'>Theme Color Picker</p>
+          <div className='m-5'>
+            <ColorPickerComponent
+              id="inline-palette"
+              mode="Picker"
+              modeSwitcher={false}
+              inline
+            />
+          </div>
+        </div>
+        <div>hello</div>
       </div>
     </div>
   )
