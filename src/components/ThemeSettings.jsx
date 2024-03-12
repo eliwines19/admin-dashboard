@@ -1,16 +1,21 @@
 import React from 'react'
 import { MdOutlineCancel } from "react-icons/md";
-import { BsCheck } from 'react-icons/bs'
-import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
 
-import { themeColors } from '../data/dummy';
+// no longer need, rendering colorpicker component instead
+// import { themeColors } from '../data/dummy';
+// import { BsCheck } from 'react-icons/bs'
+// import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import { useStateContext } from '../contexts/ContextProvider'
 
 const ThemeSettings = () => {
 
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext()
+
+  // const handleChange = (e) => {
+  //   setColor(e.value)
+  // }
 
   return (
     <div className='bg-half-transparent w-screen fixed nav-item top-0 right-0'>
@@ -60,9 +65,9 @@ const ThemeSettings = () => {
           </div>
         </div>
 
-
+        {/* removed theme options, instead added colorpicker component */}
         {/* display is currently hidden */}
-        <div className='flex-col border-t-1 border-color p-4 ml-4 hidden'>
+        {/* <div className='flex-col border-t-1 border-color p-4 ml-4 hidden'>
           <p className='font-semibold text-lg'>Theme Colors</p>
           <div className='flex gap-3'>
             {themeColors.map((item, index) => (
@@ -84,7 +89,7 @@ const ThemeSettings = () => {
               </TooltipComponent>
             ))}
           </div>
-        </div>
+        </div> */}
         <div className='flex-col border-t-1 border-color p-4 ml-4'>
           <p className='font-semibold text-lg'>Theme Color Picker</p>
           <div className='m-5'>
@@ -93,10 +98,11 @@ const ThemeSettings = () => {
               mode="Picker"
               modeSwitcher={false}
               inline
+              value={currentColor}
+              change={(e) => setColor(e.value)}
             />
           </div>
         </div>
-        <div>hello</div>
       </div>
     </div>
   )
