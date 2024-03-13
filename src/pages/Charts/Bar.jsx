@@ -8,6 +8,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 const Bar = () => {
 
   const { currentMode } = useStateContext()
+  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff'
 
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
@@ -18,8 +19,8 @@ const Bar = () => {
           primaryYAxis={barPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
           tooltip={{ enable: true }}
-          background={currentMode === 'Dark' ? '#33373E' : '#fff'}
-          legendSettings={{ background: 'white' }}
+          background={ bgColor }
+          legendSettings={{ background: bgColor, textStyle: { color: currentMode === 'Dark' ? '#fff' : '#33373E' } }}
       >
         <Inject services={[ColumnSeries, Legend, Tooltip, Category, DataLabel]} />
         <SeriesCollectionDirective>

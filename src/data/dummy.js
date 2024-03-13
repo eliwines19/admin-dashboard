@@ -3183,7 +3183,7 @@ export const stackedCustomSeries = [
     name: 'Budget',
     type: 'StackingColumn',
     background: 'blue',
-
+    fill: '#01BDAE'
   },
 
   { dataSource: stackedChartData[1],
@@ -3192,7 +3192,7 @@ export const stackedCustomSeries = [
     name: 'Expense',
     type: 'StackingColumn',
     background: 'red',
-
+    fill: '#3774B8'
   },
 
 ];

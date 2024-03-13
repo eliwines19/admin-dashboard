@@ -4,12 +4,14 @@ import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, Accu
 import { useStateContext } from '../../contexts/ContextProvider';
 
 const Doughnut = ({ id, data, legendVisiblity, height }) => {
+
   const { currentMode } = useStateContext();
+  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff' 
 
   return (
     <AccumulationChartComponent
       id={id}
-      legendSettings={{ visible: legendVisiblity, background: 'white' }}
+      legendSettings={{ visible: true, legendVisiblity, background: bgColor, textStyle: { color: currentMode === 'Dark' ? '#fff' : '#33373E' } }}
       height={height}
       background={currentMode === 'Dark' ? '#33373E' : '#fff'}
       tooltip={{ enable: true }}

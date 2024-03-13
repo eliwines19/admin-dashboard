@@ -8,6 +8,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 const ColorMapping = () => {
 
   const { currentMode } = useStateContext()
+  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff'
   
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
@@ -18,7 +19,7 @@ const ColorMapping = () => {
           primaryXAxis={ColorMappingPrimaryXAxis}
           primaryYAxis={ColorMappingPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
-          legendSettings={{ mode: 'Range', background: 'white' }}
+          legendSettings={{ mode: 'Range', background: bgColor, textStyle: { color: currentMode === 'Dark' ? '#fff' : '#33373E'} }}
           tooltip={{ enable: true }}
           background={ currentMode === 'Dark' ? '#33373E' : '#fff' }
         >

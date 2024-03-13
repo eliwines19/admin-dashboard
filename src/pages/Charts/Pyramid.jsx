@@ -7,7 +7,8 @@ import { Header } from '../../components';
 
 const Pyramid = () => {
 
-  const { activeMode } = useStateContext()
+  const { currentMode } = useStateContext()
+  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff'
 
   return (
     <div className="m-4 md:m-10 mt-24  p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
@@ -15,9 +16,9 @@ const Pyramid = () => {
       <div className='w-full'>
         <AccumulationChartComponent
           id="pyramid-chart"
-          legendSettings={{ background: 'white' }}
+          legendSettings={{ background: bgColor, textStyle: { color: currentMode === 'Dark' ? '#fff' : '#33373E' } }}
           tooltip={{ enable: true }}
-          background={ activeMode === 'Dark' ? '#33373E' : '#fff' }
+          background={ bgColor }
         >
           <Inject services={[AccumulationLegend, AccumulationDataLabel, AccumulationTooltip, PyramidSeries, AccumulationSelection]} />
           <AccumulationSeriesCollectionDirective>
