@@ -40,7 +40,7 @@ module.exports = {
         },
         backgroundImage: {
           'hero-pattern':
-            "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+            "url('https://i.ibb.co/JnfGrKJ/vecteezy-financial-growth-arrows-with-colorful-vector-illustration-7872285.jpg')",
         },
       },
     },
