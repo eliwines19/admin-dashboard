@@ -3,11 +3,18 @@ import { GridComponent, ColumnsDirective, ColumnDirective, Page, Search, Inject,
 
 import { employeesData, employeesGrid } from '../data/dummy'
 import { Header } from '../components'
+import { NavLink } from 'react-router-dom'
 
 const Employees = () => {
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
-      <Header category="Page" title="Employees" />
+      <div className='flex justify-between'>
+        <Header category="Page" title="Employees" />
+        <NavLink
+          to='/new/employee'
+          className={'flex justify-center rounded-3xl'}
+        ><button>Add Employee</button></NavLink>
+      </div>
       <GridComponent
         width="auto"
         dataSource={employeesData}
