@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Line, Financial, ColorPicker, ColorMapping, Editor } from './pages'
+import { Navbar, Sidebar, ThemeSettings } from './components'
+import { Ecommerce, Products, Sales, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, Line, Financial, ColorPicker, ColorMapping, Editor } from './pages'
 import './App.css'
 
 import { useStateContext } from './contexts/ContextProvider'
@@ -51,7 +51,8 @@ const App = () => {
                                 <Route path="/ecommerce" element={<Ecommerce />}/>
 
                                 {/* Pages */}
-                                <Route path="/orders" element={<Orders />}/>
+                                <Route path="/sales" element={<Sales />}/>
+                                <Route path="/products" element={<Products />}/>
                                 <Route path="/employees" element={<Employees />}/>
                                 <Route path="/customers" element={<Customers />}/>
 
