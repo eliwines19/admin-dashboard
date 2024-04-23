@@ -5,16 +5,20 @@ import { employeesData, employeesGrid } from '../data/dummy'
 import { Header } from '../components'
 import { NavLink } from 'react-router-dom'
 
+import { useStateContext } from '../contexts/ContextProvider'
+
 const Employees = () => {
+
+  const { currentColor } = useStateContext()
+
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
-      <div className='flex justify-between'>
-        <Header category="Page" title="Employees" />
-        <NavLink
-          to='/new/employee'
-          className={'flex justify-center rounded-3xl'}
-        ><button>Add Employee</button></NavLink>
-      </div>
+
+      <Header category="Page" title="Employees" />
+      <NavLink
+        to='/new/product'
+      ><button>Add Product</button></NavLink>
+
       <GridComponent
         width="auto"
         dataSource={employeesData}
