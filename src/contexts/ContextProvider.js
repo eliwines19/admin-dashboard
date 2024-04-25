@@ -64,6 +64,28 @@ export const ContextProvider = ({ children }) => {
         })
     }
     // end product methods
+    // employee methods
+    const addEmployee = async (employee) => {
+        const response = axios.post(`${BASE_URL}/employee/new`, employee)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const getEmployees = async () => {
+        const response = axios.get(`${BASE_URL}/employees`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const deleteEmployee = async (id) => {
+        const response = axios.delete(`${BASE_URL}/employee/delete/${id}`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+    // end employee methods
 
     const setMode = (e) => {
         setCurrentMode(e.target.value)
@@ -97,7 +119,16 @@ export const ContextProvider = ({ children }) => {
                 setThemeSettings,
                 setMode,
                 setColor,
-                initialState
+                initialState,
+                addSale,
+                getSales,
+                deleteSale,
+                addProduct,
+                getProducts,
+                deleteProduct,
+                addEmployee,
+                getEmployees,
+                deleteEmployee
             }}
         >
             {children}
