@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useStateContext } from '../../contexts/ContextProvider'
 
 const ProductForm = () => {
+
+  const { addProduct } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     img: '',
@@ -14,7 +17,15 @@ const ProductForm = () => {
     setInputState({...inputState, [name]: e.target.value})
   }
 
-  console.log(inputState)
+  const handleSubmit = e => {
+    e.preventDefault()
+    addProduct(inputState)
+    setInputState({
+      img: '',
+      name: '',
+      price: ''
+    })
+  }
 
   const styles = {
     outline: 'none',
@@ -27,7 +38,7 @@ const ProductForm = () => {
   }
 
   return (
-    <form className='flex flex-col gap-8'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
       <h1>New Product</h1>
       <div className='input-control'>
         <input
