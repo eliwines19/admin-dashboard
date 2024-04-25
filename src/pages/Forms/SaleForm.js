@@ -21,7 +21,19 @@ const SaleForm = () => {
     setInputState({...inputState, [name]: e.target.value})
   }
 
-  console.log(inputState)
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(inputState)
+    setInputState({
+      productName: '',
+      productPrice: '',
+      date: '',
+      customerName: '',
+      customerEmail: '',
+      customerPhoneNumber: '',
+      customerCountry: ''
+    })
+  }
 
   const styles = {
     outline: 'none',
@@ -34,7 +46,7 @@ const SaleForm = () => {
   }
 
   return (
-    <form className='flex flex-col gap-8'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
       <h1>New Sale</h1>
       <div className='input-control'>
         <input
