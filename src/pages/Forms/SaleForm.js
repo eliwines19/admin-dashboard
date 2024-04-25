@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CountryDropdown } from 'react-country-region-selector';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 const SaleForm = () => {
+
+  const { addSale } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     productName: '',
@@ -23,7 +26,7 @@ const SaleForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(inputState)
+    addSale(inputState)
     setInputState({
       productName: '',
       productPrice: '',
