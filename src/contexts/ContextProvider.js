@@ -22,7 +22,7 @@ export const ContextProvider = ({ children }) => {
 
     // sale methods
     const addSale = async (sale) => {
-        const response = await axios.post(`${BASE_URL}/sale/new`)
+        const response = await axios.post(`${BASE_URL}/sale/new`, sale)
         .catch((error) => {
             console.log(error)
         })
@@ -42,6 +42,28 @@ export const ContextProvider = ({ children }) => {
         })
     }
     // end sale methods
+    // product methods
+    const addProduct = async (product) => {
+        const response = await axios.post(`${BASE_URL}/product/new`, product)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const getProducts = async () => {
+        const response = await axios.get(`${BASE_URL}/products`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const deleteProduct = async (id) => {
+        const response = await axios.delete(`${BASE_URL}/product/delete/${id}`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+    // end product methods
 
     const setMode = (e) => {
         setCurrentMode(e.target.value)
