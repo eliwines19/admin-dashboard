@@ -16,7 +16,7 @@ const Employees = () => {
 
       <Header category="Page" title="Employees" />
       <NavLink
-        to='/new/employee'
+        to='/employee/new'
       ><button>Add Employee</button></NavLink>
 
       <GridComponent

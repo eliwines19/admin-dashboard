@@ -15,7 +15,7 @@ const { currentColor } = useStateContext()
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
       <Header category="Page" title="Sales" />
       <NavLink
-        to='/new/sale'
+        to='/sale/new'
       ><button>Add Sale</button></NavLink>
       <GridComponent
         width="auto"

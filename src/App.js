@@ -57,9 +57,9 @@ const App = () => {
                                 <Route path="/customers" element={<Customers />}/>
 
                                 {/* Forms */}
-                                <Route path='/new/sale' element={<SaleForm />}/>
-                                <Route path='/new/product' element={<ProductForm />}/>
-                                <Route path='/new/employee' element={<EmployeeForm />}/>
+                                <Route path='/sale/new' element={<SaleForm />}/>
+                                <Route path='/product/new' element={<ProductForm />}/>
+                                <Route path='/employee/new' element={<EmployeeForm />}/>
 
                                 {/* Apps */}
                                 <Route path="/kanban" element={<Kanban />}/>
