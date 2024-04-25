@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CountryDropdown } from 'react-country-region-selector';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 const EmployeeForm = () => {
+
+  const { addEmployee } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     name: '',
@@ -18,7 +21,16 @@ const EmployeeForm = () => {
     setInputState({...inputState, [name]: e.target.value})
   }
 
-  console.log(inputState)
+  const handleSubmit = e => {
+    e.preventDefault()
+    addEmployee(inputState)
+    setInputState({
+      name: '',
+      country: '',
+      jobTitle: '',
+      hireDate: ''
+    })
+  }
 
   const styles = {
     outline: 'none',
@@ -31,7 +43,7 @@ const EmployeeForm = () => {
   }
 
   return (
-    <form className='flex flex-col gap-8'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
       <h1>New Employee</h1>
       <div className='input-control'>
         <input
