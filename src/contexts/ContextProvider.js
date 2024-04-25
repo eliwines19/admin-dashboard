@@ -1,4 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
+import axios from 'axios'
+
+const BASE_URL = 'http://localhost:3000/api/v1'
 
 const StateContext = createContext()
 
@@ -16,6 +19,29 @@ export const ContextProvider = ({ children }) => {
     const [ currentColor, setCurrentColor ] = useState('#03C9D7')
     const [ currentMode, setCurrentMode ] = useState('Light')
     const [ themeSettings, setThemeSettings ] = useState(false)
+
+    // sale methods
+    const addSale = async (sale) => {
+        const response = await axios.post(`${BASE_URL}/sale/new`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const getSales = async () => {
+        const response = await axios.get(`${BASE_URL}/sales`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const deleteSale = async (id) => {
+        const response = await axios.delete(`${BASE_URL}/sale/delete/${id}`)
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+    // end sale methods
 
     const setMode = (e) => {
         setCurrentMode(e.target.value)
