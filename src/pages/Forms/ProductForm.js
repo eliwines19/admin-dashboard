@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useStateContext } from '../../contexts/ContextProvider'
+import { Header } from '../../components'
 
 const ProductForm = () => {
 
@@ -27,51 +28,44 @@ const ProductForm = () => {
     })
   }
 
-  const styles = {
-    outline: 'none',
-    padding: '.5rem 1rem',
-    borderRadius: '5px',
-    border: '2px solid #fff',
-    resize: 'none',
-    boxShadow: '0px 1px 15px rgba(0,0,0,0.06)',
-    color: 'rgba(34, 34, 96, 0.4)'
-  }
-
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
-      <h1>New Product</h1>
-      <div className='input-control'>
-        <input
-          style={styles}
-          type="text"
-          value={name}
-          name={'name'}
-          placeholder='Product Name'
-          onChange={handleInput('name')}
-        />
-      </div>
-      <div className='input-control'>
-        <input
-          style={styles}
-          type="text"
-          value={img}
-          name={'img'}
-          placeholder='Link to Image'
-          onChange={handleInput('img')}
-        />
-      </div>
-      <div className='input-control'>
-        <input
-          style={styles}
-          type="text"
-          value={price}
-          name={'price'}
-          placeholder='Product Price'
-          onChange={handleInput('price')}
-        />
+    <form onSubmit={handleSubmit} className='justify-center text-center'>
+      <Header category="" title="New Product" />
+
+      <div className='flex justify-center'>
+        <div className='input-control'>
+          <input
+            type="text"
+            value={name}
+            name={'name'}
+            placeholder='Product Name'
+            onChange={handleInput('name')}
+          />
+        </div>
+        <div className='input-control'>
+          <input
+            type="text"
+            value={img}
+            name={'img'}
+            placeholder='Link to Image'
+            onChange={handleInput('img')}
+          />
+        </div>
       </div>
 
-      <div className='submit-btn'>
+      <div className='flex justify-center'>
+        <div className='input-control'>
+          <input
+            type="text"
+            value={price}
+            name={'price'}
+            placeholder='Product Price'
+            onChange={handleInput('price')}
+          />
+        </div>
+      </div>
+
+      <div className='p-10'>
         <button>Add Product</button>
       </div>
     </form>

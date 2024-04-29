@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CountryDropdown } from 'react-country-region-selector';
 import { useStateContext } from '../../contexts/ContextProvider';
+import { Header } from '../../components';
 
 const EmployeeForm = () => {
 
@@ -43,51 +44,54 @@ const EmployeeForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
-      <h1>New Employee</h1>
-      <div className='input-control'>
-        <input
-          style={styles}
-          type="text"
-          value={name}
-          name={'name'}
-          placeholder='Employee Name'
-          onChange={handleInput('name')}
-        />
-      </div>
-      <div className='input-control'>
-        <CountryDropdown
-          style={styles}
-          value={country}
-          onChange={(country) => {
-            setInputState({...inputState, country: country})
-          }}
-        />
-      </div>
-      <div className='input-control'>
-        <input
-          style={styles}
-          type="text"
-          value={jobTitle}
-          name={'jobTitle'}
-          placeholder='Job Title'
-          onChange={handleInput('jobTitle')}
-        />
-      </div>
-      <div className='input-control'>
-        <DatePicker
-          className='outline-none p-2 rounded border-2 border-white resize-none shadow-sm text-indigo-800 opacity-40'
-          id='hireDate'
-          placeholderText='Enter A Date'
-          selected={hireDate}
-          dateFormat='dd/MM/yyyy'
-          onChange={(hireDate) => {
-              setInputState({...inputState, hireDate: hireDate})
-          }}
-        />
+    <form onSubmit={handleSubmit} className='justify-center text-center'>
+      <Header category="" title="New Employee" />
+
+      <div className='flex justify-center'>
+        <div className='input-control'>
+          <input
+            type="text"
+            value={name}
+            name={'name'}
+            placeholder='Employee Name'
+            onChange={handleInput('name')}
+          />
+        </div>
+        <div className='input-control'>
+          <CountryDropdown
+            value={country}
+            onChange={(country) => {
+              setInputState({...inputState, country: country})
+            }}
+          />
+        </div>
       </div>
 
-      <div className='submit-btn'>
+
+      <div className='flex justify-center'>
+        <div className='input-control'>
+          <input
+            type="text"
+            value={jobTitle}
+            name={'jobTitle'}
+            placeholder='Job Title'
+            onChange={handleInput('jobTitle')}
+          />
+        </div>
+        <div className='input-control'>
+          <DatePicker
+            id='hireDate'
+            placeholderText='Enter A Date'
+            selected={hireDate}
+            dateFormat='dd/MM/yyyy'
+            onChange={(hireDate) => {
+                setInputState({...inputState, hireDate: hireDate})
+            }}
+          />
+        </div>
+      </div>
+
+      <div className='p-10'>
         <button>Add Employee</button>
       </div>
     </form>
