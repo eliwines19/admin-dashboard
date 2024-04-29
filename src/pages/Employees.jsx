@@ -1,6 +1,6 @@
 import React from 'react'
+import { FaPlus } from "react-icons/fa6";
 import { GridComponent, ColumnsDirective, ColumnDirective, Page, Search, Inject, Toolbar } from '@syncfusion/ej2-react-grids'
-
 import { employeesData, employeesGrid } from '../data/dummy'
 import { Header } from '../components'
 import { NavLink } from 'react-router-dom'
@@ -13,12 +13,14 @@ const Employees = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
-
-      <Header category="Page" title="Employees" />
-      <NavLink
-        to='/employee/new'
-      ><button>Add Employee</button></NavLink>
-
+      <div className='flex justify-between'>
+        <Header category="Page" title="Employees" />
+        <NavLink to='/employee/new' className='flex justify-center items-center' style={{ backgroundColor: currentColor }}>
+          <button className='p-5 text-xl flex text-white'>
+            Add Employee <FaPlus />
+          </button>
+        </NavLink>
+      </div>
       <GridComponent
         width="auto"
         dataSource={employeesData}
