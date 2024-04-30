@@ -33,66 +33,64 @@ const EmployeeForm = () => {
     })
   }
 
-  const styles = {
-    outline: 'none',
-    padding: '.5rem 1rem',
-    borderRadius: '5px',
-    border: '2px solid #fff',
-    resize: 'none',
-    boxShadow: '0px 1px 15px rgba(0,0,0,0.06)',
-    color: 'rgba(34, 34, 96, 0.4)'
-  }
-
   return (
     <form onSubmit={handleSubmit} className='justify-center text-center'>
-      <Header category="" title="New Employee" />
 
-      <div className='flex justify-center'>
-        <div className='input-control'>
-          <input
-            type="text"
-            value={name}
-            name={'name'}
-            placeholder='Employee Name'
-            onChange={handleInput('name')}
-          />
+      <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl dark:bg-secondary-dark-bg">
+        <Header category="" title="New Employee" />
+
+        <div className='flex justify-center'>
+          <div className='input-control'>
+            <input
+              className='p-2 m-5 border-b-2 border-gray-500'
+              type="text"
+              value={name}
+              name={'name'}
+              placeholder='Employee Name'
+              onChange={handleInput('name')}
+            />
+          </div>
+          <div className='input-control'>
+            <input
+              className='p-2 m-5 border-b-2 border-gray-500'
+              type='text'
+              value={country}
+              name={'country'}
+              placeholder='Country'
+              onChange={handleInput('country')}
+            />
+          </div>
         </div>
-        <div className='input-control'>
-          <CountryDropdown
-            value={country}
-            onChange={(country) => {
-              setInputState({...inputState, country: country})
-            }}
-          />
-        </div>
-      </div>
 
 
-      <div className='flex justify-center'>
-        <div className='input-control'>
-          <input
-            type="text"
-            value={jobTitle}
-            name={'jobTitle'}
-            placeholder='Job Title'
-            onChange={handleInput('jobTitle')}
-          />
+        <div className='flex justify-center'>
+          <div className='input-control'>
+            <input
+              className='p-2 m-5 border-b-2 border-gray-500'
+              type="text"
+              value={jobTitle}
+              name={'jobTitle'}
+              placeholder='Job Title'
+              onChange={handleInput('jobTitle')}
+            />
+          </div>
+          <div className='input-control'>
+            <DatePicker
+              className='p-2 m-5 border-b-2 border-gray-500'
+              id='hireDate'
+              placeholderText='Enter A Date'
+              selected={hireDate}
+              dateFormat='dd/MM/yyyy'
+              onChange={(hireDate) => {
+                  setInputState({...inputState, hireDate: hireDate})
+              }}
+            />
+          </div>
         </div>
-        <div className='input-control'>
-          <DatePicker
-            id='hireDate'
-            placeholderText='Enter A Date'
-            selected={hireDate}
-            dateFormat='dd/MM/yyyy'
-            onChange={(hireDate) => {
-                setInputState({...inputState, hireDate: hireDate})
-            }}
-          />
-        </div>
-      </div>
 
-      <div className='p-10'>
-        <button>Add Employee</button>
+        <div className='p-10'>
+          <button>Add Employee</button>
+        </div>
       </div>
     </form>
   )
