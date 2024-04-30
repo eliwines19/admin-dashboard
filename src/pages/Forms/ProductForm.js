@@ -4,7 +4,7 @@ import { Header } from '../../components'
 
 const ProductForm = () => {
 
-  const { addProduct } = useStateContext()
+  const { addProduct, currentColor } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     img: '',
@@ -71,7 +71,12 @@ const ProductForm = () => {
         </div>
 
         <div className='p-10'>
-          <button>Add Product</button>
+          <button
+            className='text-xl p-3 w-1/3 rounded-xl hover:drop-shadow-xl'
+            style={{ backgroundColor: currentColor }}
+          >
+            Add Product
+          </button>
         </div>
       </div>
     </form>

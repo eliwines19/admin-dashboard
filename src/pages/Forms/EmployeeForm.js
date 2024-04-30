@@ -7,7 +7,7 @@ import { Header } from '../../components';
 
 const EmployeeForm = () => {
 
-  const { addEmployee } = useStateContext()
+  const { addEmployee, currentColor } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     name: '',
@@ -89,7 +89,12 @@ const EmployeeForm = () => {
         </div>
 
         <div className='p-10'>
-          <button>Add Employee</button>
+          <button
+            className='text-xl p-3 w-1/3 rounded-xl hover:drop-shadow-xl'
+            style={{ backgroundColor: currentColor }}
+          >
+            Add Employee
+          </button>
         </div>
       </div>
     </form>

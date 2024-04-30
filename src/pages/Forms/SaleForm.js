@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { CountryDropdown } from 'react-country-region-selector';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { Header } from '../../components';
 
 const SaleForm = () => {
 
-  const { addSale } = useStateContext()
+  const { addSale, currentColor } = useStateContext()
 
   const [ inputState, setInputState ] = useState({
     productName: '',
@@ -130,7 +129,12 @@ const SaleForm = () => {
         </div>
 
         <div className='p-10'>
-          <button>Add Sale</button>
+          <button
+            className='text-xl p-3 w-1/3 rounded-xl hover:drop-shadow-xl'
+            style={{ backgroundColor: currentColor }}
+          >
+            Add Sale
+          </button>
         </div>
       </div>
     </form>
