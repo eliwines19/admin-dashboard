@@ -19,6 +19,9 @@ export const ContextProvider = ({ children }) => {
     const [ currentColor, setCurrentColor ] = useState('#03C9D7')
     const [ currentMode, setCurrentMode ] = useState('Light')
     const [ themeSettings, setThemeSettings ] = useState(false)
+    const [ employees, setEmployees ] = useState([])
+    const [ products, setProducts ] = useState([])
+    const [ sales, setSales ] = useState([])
 
     // sale methods
     const addSale = async (sale) => {
@@ -26,6 +29,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getSales()
     }
 
     const getSales = async () => {
@@ -33,6 +37,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        setSales(response.data)
     }
 
     const deleteSale = async (id) => {
@@ -40,6 +45,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getSales()
     }
     // end sale methods
     // product methods
@@ -48,6 +54,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getProducts()
     }
 
     const getProducts = async () => {
@@ -55,6 +62,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        setProducts(response.data)
     }
 
     const deleteProduct = async (id) => {
@@ -62,6 +70,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getProducts()
     }
     // end product methods
     // employee methods
@@ -70,6 +79,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getEmployees()
     }
 
     const getEmployees = async () => {
@@ -77,6 +87,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        setEmployees(response.data)
     }
 
     const deleteEmployee = async (id) => {
@@ -84,6 +95,7 @@ export const ContextProvider = ({ children }) => {
         .catch((error) => {
             console.log(error)
         })
+        getEmployees()
     }
     // end employee methods
 
@@ -120,12 +132,15 @@ export const ContextProvider = ({ children }) => {
                 setMode,
                 setColor,
                 initialState,
+                sales,
                 addSale,
                 getSales,
                 deleteSale,
+                products,
                 addProduct,
                 getProducts,
                 deleteProduct,
+                employees,
                 addEmployee,
                 getEmployees,
                 deleteEmployee
