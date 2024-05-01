@@ -875,6 +875,53 @@ export const userProfileData = [
   },
 ];
 
+export const salesGrid = [
+  {
+    field: 'productName',
+    headerText: 'Product Name',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'productPrice',
+    headerText: 'Product Price',
+    width: '100',
+    format: 'C2',
+    textAlign: 'Center'
+  },
+  {
+    field: 'date',
+    headerText: 'Date of Sale',
+    width: '100',
+    format: 'dd-MM-yyyy',
+    textAlign: 'Center'
+  },
+  {
+    field: 'customerName',
+    headerText: 'Customer Name',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'customerEmail',
+    headerText: 'Customer Email',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'customerPhoneNumber',
+    headerText: 'Customer Phone Number',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'customerCountry',
+    headerText: 'Customer Country',
+    width: '100',
+    textAlign: 'Center'
+  },
+]
+
 export const ordersGrid = [
   {
     headerText: 'Image',
@@ -915,7 +962,6 @@ export const ordersGrid = [
     width: '120',
     textAlign: 'Center',
   },
-
   {
     field: 'Location',
     headerText: 'Location',
@@ -2130,7 +2176,6 @@ export const ordersData = [
   {
     OrderID: 10248,
     CustomerName: 'Vinet',
-
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
     Location: 'USA',
