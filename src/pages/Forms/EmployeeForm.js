@@ -78,7 +78,7 @@ const EmployeeForm = () => {
             <DatePicker
               className='p-2 m-5 border-b-2 border-gray-500'
               id='hireDate'
-              placeholderText='Enter A Date'
+              placeholderText='Hire Date'
               selected={hireDate}
               dateFormat='dd/MM/yyyy'
               onChange={(hireDate) => {

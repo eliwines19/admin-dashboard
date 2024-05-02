@@ -31,6 +31,7 @@ const { currentColor, getSales, sales } = useStateContext()
         dataSource={sales}
         allowPaging
         allowSorting
+        toolbar={['Search']}
       >
         <ColumnsDirective>
           {salesGrid.map((item, index) => (

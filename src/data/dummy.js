@@ -431,8 +431,35 @@ export const customersGrid = [
     textAlign: 'Center',
     isPrimaryKey: true,
   },
-
 ];
+
+export const eGrid = [
+  {
+    field: 'name',
+    headerText: 'Employee Name',
+    width: '120',
+    textAlign: 'Center'
+  },
+  {
+    field: 'hireDate',
+    headerText: 'Hire Date',
+    format: 'yMd',
+    width: '120',
+    textAlign: 'Center'
+  },
+  {
+    field: 'jobTitle',
+    headerText: 'Job Title',
+    width: '120',
+    textAlign: 'Center'
+  },
+  {
+    field: 'country',
+    headerText: 'Job Title',
+    width: '120',
+    textAlign: 'Center'
+  }
+]
 
 export const employeesGrid = [
   { headerText: 'Employee',

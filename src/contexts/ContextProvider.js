@@ -83,7 +83,7 @@ export const ContextProvider = ({ children }) => {
     }
 
     const getEmployees = async () => {
-        const response = axios.get(`${BASE_URL}/employees`)
+        const response = await axios.get(`${BASE_URL}/employees`)
         .catch((error) => {
             console.log(error)
         })
