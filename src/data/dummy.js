@@ -25,11 +25,11 @@ import product7 from './product7.jpg';
 import product8 from './product8.jpg';
 
 export const gridOrderImage = (props) => (
-  <div>
+  <div className='flex justify-center'>
     <img
       className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
+      src={props.img}
+      alt="product-image"
     />
   </div>
 );
@@ -920,6 +920,28 @@ export const salesGrid = [
     width: '100',
     textAlign: 'Center'
   },
+]
+
+export const productsGrid = [
+  {
+    headerText: 'Product Image',
+    template: gridOrderImage,
+    textAlign: 'Center',
+    width: '100'
+  },
+  {
+    field: 'name',
+    headerText: 'Product Name',
+    width: '100',
+    textAlign: 'Center'
+  },
+  {
+    field: 'price',
+    headerText: 'Product Price',
+    format: 'C2',
+    width: '100',
+    textAlign: 'Center'
+  }
 ]
 
 export const ordersGrid = [
