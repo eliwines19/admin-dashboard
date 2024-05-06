@@ -75,7 +75,7 @@ export const ContextProvider = ({ children }) => {
     // end product methods
     // employee methods
     const addEmployee = async (employee) => {
-        const response = axios.post(`${BASE_URL}/employee/new`, employee)
+        const response = await axios.post(`${BASE_URL}/employee/new`, employee)
         .catch((error) => {
             console.log(error)
         })
@@ -91,7 +91,7 @@ export const ContextProvider = ({ children }) => {
     }
 
     const deleteEmployee = async (id) => {
-        const response = axios.delete(`${BASE_URL}/employee/delete/${id}`)
+        const response = await axios.delete(`${BASE_URL}/employee/delete/${id}`)
         .catch((error) => {
             console.log(error)
         })

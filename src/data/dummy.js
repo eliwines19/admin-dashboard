@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
@@ -11,6 +11,7 @@ import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import { FaSackDollar } from "react-icons/fa6";
+import { FaRegTrashAlt } from "react-icons/fa";
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -23,6 +24,43 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
+import { useStateContext } from '../contexts/ContextProvider';
+
+export const DeleteSaleBtn = (props) => {
+  const { deleteSale } = useStateContext()
+  return (
+    <button
+      className='text-lg'
+      onClick={() => deleteSale(props._id)}
+    >
+      <FaRegTrashAlt />
+    </button>
+  )
+}
+
+export const DeleteProductBtn = (props) => {
+  const { deleteProduct } = useStateContext()
+  return (
+    <button
+      className='text-lg'
+      onClick={() => deleteProduct(props._id)}
+    >
+      <FaRegTrashAlt />
+    </button>
+  )
+}
+
+export const DeleteEmployeeBtn = (props) => {
+  const { deleteEmployee } = useStateContext()
+  return (
+    <button
+      className='text-lg'
+      onClick={() => deleteEmployee(props._id)}
+    >
+      <FaRegTrashAlt />
+    </button>
+  )
+}
 
 export const gridOrderImage = (props) => (
   <div className='flex justify-center'>
@@ -459,6 +497,13 @@ export const eGrid = [
     headerText: 'Job Title',
     width: '120',
     textAlign: 'Center'
+  },
+  {
+    field: '_id',
+    headerText: '',
+    width: '50',
+    textAlign: 'Center',
+    template: DeleteEmployeeBtn
   }
 ]
 
@@ -950,6 +995,13 @@ export const salesGrid = [
     width: '100',
     textAlign: 'Center'
   },
+  {
+    field: '_id',
+    headerText: '',
+    width: '50',
+    textAlign: 'Center',
+    template: DeleteSaleBtn
+  }
 ]
 
 export const productsGrid = [
@@ -972,6 +1024,13 @@ export const productsGrid = [
     format: 'C2',
     width: '100',
     textAlign: 'Center'
+  },
+  {
+    field: '_id',
+    headerText: '',
+    width: '50',
+    textAlign: 'Center',
+    template: DeleteProductBtn
   }
 ]
 
