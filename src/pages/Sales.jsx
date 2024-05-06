@@ -31,6 +31,7 @@ const { currentColor, getSales, sales } = useStateContext()
         dataSource={sales}
         allowPaging
         allowSorting
+        allowResizing
         toolbar={['Search']}
       >
         <ColumnsDirective>

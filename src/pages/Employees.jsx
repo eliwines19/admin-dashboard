@@ -30,6 +30,7 @@ const Employees = () => {
         dataSource={employees}
         allowPaging
         allowSorting
+        allowResizing
         toolbar={['Search']}
       >
       <ColumnsDirective>

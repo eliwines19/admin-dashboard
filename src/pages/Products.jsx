@@ -31,6 +31,7 @@ const Products = () => {
         dataSource={products}
         allowPaging
         allowSorting
+        allowResizing
         toolbar={['Search']}
       >
         <ColumnsDirective>
