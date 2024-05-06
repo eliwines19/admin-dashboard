@@ -443,7 +443,8 @@ export const eGrid = [
   {
     field: 'hireDate',
     headerText: 'Hire Date',
-    format: 'yMd',
+    type: 'date',
+    format: 'dd-MM-yyyy',
     width: '120',
     textAlign: 'Center'
   },
@@ -914,13 +915,15 @@ export const salesGrid = [
     headerText: 'Product Price',
     width: '100',
     format: 'C2',
+    type: 'number',
     textAlign: 'Center'
   },
   {
     field: 'date',
     headerText: 'Date of Sale',
-    width: '100',
+    type: 'date',
     format: 'dd-MM-yyyy',
+    width: '100',
     textAlign: 'Center'
   },
   {
@@ -965,6 +968,7 @@ export const productsGrid = [
   {
     field: 'price',
     headerText: 'Product Price',
+    type: 'number',
     format: 'C2',
     width: '100',
     textAlign: 'Center'
