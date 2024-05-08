@@ -47,6 +47,18 @@ export const ContextProvider = ({ children }) => {
         })
         getSales()
     }
+
+    const totalEarnings = () => {
+        let total = 0;
+        sales.forEach((sale) => {
+            total += sale.productPrice
+        })
+        return prettyNumber(total)
+    }
+
+    const totalSales = () => {
+        return prettyNumber(sales.length)
+    }
     // end sale methods
     // product methods
     const addProduct = async (product) => {
@@ -71,6 +83,10 @@ export const ContextProvider = ({ children }) => {
             console.log(error)
         })
         getProducts()
+    }
+
+    const totalProducts = () => {
+        return prettyNumber(products.length)
     }
     // end product methods
     // employee methods
@@ -97,7 +113,15 @@ export const ContextProvider = ({ children }) => {
         })
         getEmployees()
     }
+
+    const totalEmployees = () => {
+        return prettyNumber(employees.length)
+    }
     // end employee methods
+
+    const prettyNumber = (number) => {
+        return number.toLocaleString();
+    }
 
     const setMode = (e) => {
         setCurrentMode(e.target.value)
@@ -136,14 +160,18 @@ export const ContextProvider = ({ children }) => {
                 addSale,
                 getSales,
                 deleteSale,
+                totalSales,
+                totalEarnings,
                 products,
                 addProduct,
                 getProducts,
                 deleteProduct,
+                totalProducts,
                 employees,
                 addEmployee,
                 getEmployees,
-                deleteEmployee
+                deleteEmployee,
+                totalEmployees
             }}
         >
             {children}
