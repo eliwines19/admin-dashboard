@@ -10,7 +10,13 @@ import './App.css'
 import { useStateContext } from './contexts/ContextProvider'
 
 const App = () => {
-    const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext()
+    const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode, getEmployees, getSales, getProducts } = useStateContext()
+
+    useEffect(() => {
+        getEmployees()
+        getSales()
+        getProducts()
+    }, [])
 
     return (
         <div className={currentMode === 'Dark' ? 'dark' : ''}>
