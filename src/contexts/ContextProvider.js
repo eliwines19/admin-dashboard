@@ -59,6 +59,15 @@ export const ContextProvider = ({ children }) => {
     const totalSales = () => {
         return prettyNumber(sales.length)
     }
+
+    const recentSales = () => {
+        let recents = sales.sort((a, b) => {
+            var dateA = new Date(a.date)
+            var dateB = new Date(b.date)
+            return dateB - dateA
+        })
+        return recents.slice(0, 5)
+    }
     // end sale methods
     // product methods
     const addProduct = async (product) => {
@@ -161,6 +170,7 @@ export const ContextProvider = ({ children }) => {
                 getSales,
                 deleteSale,
                 totalSales,
+                recentSales,
                 totalEarnings,
                 products,
                 addProduct,

@@ -46,6 +46,7 @@ const EcommerceOverview = () => {
             {earningData.map((item) => (
                 <NavLink
                     to={item.path}
+                    key={item.title}
                 >
                     <div
                         key={item.title}
