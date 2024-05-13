@@ -60,13 +60,17 @@ export const ContextProvider = ({ children }) => {
         return prettyNumber(sales.length)
     }
 
-    const recentSales = () => {
-        let recents = sales.sort((a, b) => {
+    const salesSortedByDate = () => {
+        let sorted = sales.sort((a, b) => {
             var dateA = new Date(a.date)
             var dateB = new Date(b.date)
             return dateB - dateA
         })
-        return recents.slice(0, 5)
+        return sorted
+    }
+
+    const recentSales = () => {
+        return salesSortedByDate().slice(0, 5)
     }
     // end sale methods
     // product methods
@@ -171,6 +175,7 @@ export const ContextProvider = ({ children }) => {
                 deleteSale,
                 totalSales,
                 recentSales,
+                salesSortedByDate,
                 totalEarnings,
                 products,
                 addProduct,

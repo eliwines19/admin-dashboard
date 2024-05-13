@@ -9,7 +9,7 @@ import EcommerceOverview from '../components/EcommerceOverview'
 
 const Ecommerce = () => {
 
-  const { currentColor, recentSales, sales, employees, products, totalEarnings, totalEmployees, totalProducts } = useStateContext()
+  const { currentColor, recentSales, salesSortedByDate, employees, products, totalEarnings, totalEmployees, totalProducts } = useStateContext()
 
   return (
     <div className="mt-12">
@@ -54,16 +54,28 @@ const Ecommerce = () => {
               </div>
             </div>
 
-            <div className='mt-10 flex gap-10 flex-wrap justify-around'>
+            <div className='mt-10 flex gap-10 flex-wrap '>
               <div className='border-r-1 border-color m-4 pr-10'>
-                {recentSales().map((sale) => (
-                  <div className='mb-8'>
+                {recentSales().map((sale, index) => (
+                  <div className='mb-8' key={index}>
                     <p>
                       <span className='text-xl font-semibold'>{sale.productName}</span>
                       <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>+${sale.productPrice}</span>
                     </p>
                   </div>
                 ))}
+                <div>
+                  <p>
+                    <Button
+                      nav={true}
+                      path='/sales'
+                      color="white"
+                      bgColor={currentColor}
+                      text="See All"
+                      borderRadius="10px"
+                    />
+                  </p>
+                </div>
                   {/* <div>
                     <p>
                       <span className='text-3xl font-semibold'>$93,438</span>
@@ -101,7 +113,7 @@ const Ecommerce = () => {
 
               <div>
                 <Stacked
-                  width="320px"
+                  width="400px"
                   height="360px"
                 />
               </div>
