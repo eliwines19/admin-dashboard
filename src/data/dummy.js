@@ -410,25 +410,25 @@ export const FinancialPrimaryYAxis = {
   majorTickLines: { width: 0 },
 };
 
-export const LinePrimaryXAxis = {
-  valueType: 'DateTime',
-  labelFormat: 'y',
-  intervalType: 'Years',
-  edgeLabelPlacement: 'Shift',
-  majorGridLines: { width: 0 },
-  background: 'white',
-};
+// export const LinePrimaryXAxis = {
+//   valueType: 'DateTime',
+//   labelFormat: 'y',
+//   intervalType: 'Years',
+//   edgeLabelPlacement: 'Shift',
+//   majorGridLines: { width: 0 },
+//   background: 'white',
+// };
 
-export const LinePrimaryYAxis = {
-  labelFormat: '{value}%',
-  rangePadding: 'None',
-  minimum: 0,
-  maximum: 100,
-  interval: 20,
-  lineStyle: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-};
+// export const LinePrimaryYAxis = {
+//   labelFormat: '{value}%',
+//   rangePadding: 'None',
+//   minimum: 0,
+//   maximum: 100,
+//   interval: 20,
+//   lineStyle: { width: 0 },
+//   majorTickLines: { width: 0 },
+//   minorTickLines: { width: 0 },
+// };
 
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
@@ -3243,32 +3243,32 @@ export const SparklineAreaData = [
 
 ];
 
-export const lineCustomSeries = [
-  { dataSource: lineChartData[0],
-    xName: 'x',
-    yName: 'y',
-    name: 'Germany',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+// export const lineCustomSeries = [
+//   { dataSource: lineChartData[0],
+//     xName: 'x',
+//     yName: 'y',
+//     name: 'Germany',
+//     width: '2',
+//     marker: { visible: true, width: 10, height: 10 },
+//     type: 'Line' },
 
-  { dataSource: lineChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: 'England',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+//   { dataSource: lineChartData[1],
+//     xName: 'x',
+//     yName: 'y',
+//     name: 'England',
+//     width: '2',
+//     marker: { visible: true, width: 10, height: 10 },
+//     type: 'Line' },
 
-  { dataSource: lineChartData[2],
-    xName: 'x',
-    yName: 'y',
-    name: 'India',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+//   { dataSource: lineChartData[2],
+//     xName: 'x',
+//     yName: 'y',
+//     name: 'India',
+//     width: '2',
+//     marker: { visible: true, width: 10, height: 10 },
+//     type: 'Line' },
 
-];
+// ];
 
 export const pieChartData = [
   { x: 'Labour', y: 18, text: '18%' },
