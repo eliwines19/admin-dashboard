@@ -132,6 +132,8 @@ export const ContextProvider = ({ children }) => {
     }
     // end employee methods
 
+    const currentYear = new Date().getUTCFullYear()
+
     const prettyNumber = (number) => {
         return number.toLocaleString();
     }
@@ -169,6 +171,7 @@ export const ContextProvider = ({ children }) => {
                 setMode,
                 setColor,
                 initialState,
+                currentYear,
                 sales,
                 addSale,
                 getSales,
