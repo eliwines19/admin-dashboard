@@ -15,11 +15,14 @@ const Bar = () => {
     const productCount = {}
 
     sales.forEach((sale) => {
-      const { productName } = sale;
-      if(!productCount[productName]){
-        productCount[productName] = 0;
+      const { productName, date } = sale;
+      const saleYear = new Date(date).getUTCFullYear()
+      if(saleYear === currentYear){
+        if(!productCount[productName]){
+          productCount[productName] = 0;
+        }
+        productCount[productName] += 1
       }
-      productCount[productName] += 1
     })
 
     const sortedProductCount = Object.entries(productCount)
@@ -29,7 +32,6 @@ const Bar = () => {
     const top3Products = sortedProductCount.slice(0, 3)
 
     return top3Products
-
   }
 
   const barCustomSeries = [{
