@@ -1,12 +1,43 @@
 import React from 'react';
 import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationLegend, PieSeries, AccumulationDataLabel, Inject, AccumulationTooltip } from '@syncfusion/ej2-react-charts';
 
+
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const Doughnut = ({ id, data, legendVisiblity, height }) => {
+const Doughnut = ({ id, legendVisiblity, height }) => {
 
-  const { currentMode } = useStateContext();
-  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff' 
+  const { currentMode, currentYear, sales, totalSales } = useStateContext();
+  const bgColor = currentMode === 'Dark' ? '#33373E' : '#fff'
+
+  const getChartData = () => {
+
+    const salesCount = {}
+
+    sales.forEach((sale) => {
+      const { productName, date } = sale;
+      const saleYear = new Date(date).getUTCFullYear()
+      if(currentYear === saleYear){
+        if(!salesCount[productName]){
+          salesCount[productName] = 0
+        }
+        salesCount[productName] += 1
+      }
+    })
+
+    const totalSalesNum = Number(totalSales())
+
+    const result = Object.entries(salesCount).map((sale) => {
+      const percentage = totalSalesNum > 0 ? Math.round((sale[1] / totalSalesNum * 100)) : 0
+      console.log(`${percentage}%`)
+      return {
+        x: `${sale[0]}`,
+        y: sale[1],
+        text: `${percentage}%`
+      } 
+    })
+
+    return result
+  }
 
   return (
     <AccumulationChartComponent
@@ -20,7 +51,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
           name="Sale"
-          dataSource={data}
+          dataSource={getChartData()}
           xName="x"
           yName="y"
           innerRadius="40%"
