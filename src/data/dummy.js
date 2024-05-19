@@ -4,11 +4,11 @@ import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, Fi
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
+// import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 // import { MdOutlineSupervisorAccount } from 'react-icons/md';
 // import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
+// import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import { FaSackDollar } from "react-icons/fa6";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -23,7 +23,7 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
+// import product8 from './product8.jpg';
 import { useStateContext } from '../contexts/ContextProvider';
 
 export const DeleteSaleBtn = (props) => {
@@ -179,168 +179,7 @@ const customerGridStatus = (props) => (
     <p>{props.Status}</p>
   </div>
 );
-// export const areaPrimaryXAxis = {
-//   valueType: 'DateTime',
-//   labelFormat: 'y',
-//   majorGridLines: { width: 0 },
-//   intervalType: 'Years',
-//   edgeLabelPlacement: 'Shift',
-//   labelStyle: { color: 'gray' },
-// };
 
-// export const areaPrimaryYAxis = {
-//   labelFormat: '{value}%',
-//   lineStyle: { width: 0 },
-//   maximum: 4,
-//   interval: 1,
-//   majorTickLines: { width: 0 },
-//   minorTickLines: { width: 0 },
-//   labelStyle: { color: 'gray' },
-// };
-
-// export const barPrimaryXAxis = {
-//   valueType: 'Category',
-//   interval: 1,
-//   majorGridLines: { width: 0 },
-// };
-// export const barPrimaryYAxis = {
-//   majorGridLines: { width: 0 },
-//   majorTickLines: { width: 0 },
-//   lineStyle: { width: 0 },
-//   labelStyle: { color: 'transparent' },
-// };
-// const areaChartData = [
-//   [
-//     { x: new Date(2002, 0, 1), y: 2.2 },
-//     { x: new Date(2003, 0, 1), y: 3.4 },
-//     { x: new Date(2004, 0, 1), y: 2.8 },
-//     { x: new Date(2005, 0, 1), y: 1.6 },
-//     { x: new Date(2006, 0, 1), y: 2.3 },
-//     { x: new Date(2007, 0, 1), y: 2.5 },
-//     { x: new Date(2008, 0, 1), y: 2.9 },
-//     { x: new Date(2009, 0, 1), y: 3.8 },
-//     { x: new Date(2010, 0, 1), y: 1.4 },
-//     { x: new Date(2011, 0, 1), y: 3.1 },
-//   ],
-//   [
-//     { x: new Date(2002, 0, 1), y: 2 },
-//     { x: new Date(2003, 0, 1), y: 1.7 },
-//     { x: new Date(2004, 0, 1), y: 1.8 },
-//     { x: new Date(2005, 0, 1), y: 2.1 },
-//     { x: new Date(2006, 0, 1), y: 2.3 },
-//     { x: new Date(2007, 0, 1), y: 1.7 },
-//     { x: new Date(2008, 0, 1), y: 1.5 },
-//     { x: new Date(2009, 0, 1), y: 2.8 },
-//     { x: new Date(2010, 0, 1), y: 1.5 },
-//     { x: new Date(2011, 0, 1), y: 2.3 },
-//   ],
-//   [
-//     { x: new Date(2002, 0, 1), y: 0.8 },
-//     { x: new Date(2003, 0, 1), y: 1.3 },
-//     { x: new Date(2004, 0, 1), y: 1.1 },
-//     { x: new Date(2005, 0, 1), y: 1.6 },
-//     { x: new Date(2006, 0, 1), y: 2 },
-//     { x: new Date(2007, 0, 1), y: 1.7 },
-//     { x: new Date(2008, 0, 1), y: 2.3 },
-//     { x: new Date(2009, 0, 1), y: 2.7 },
-//     { x: new Date(2010, 0, 1), y: 1.1 },
-//     { x: new Date(2011, 0, 1), y: 2.3 },
-//   ],
-// ];
-
-// export const areaCustomSeries = [
-//   {
-//     dataSource: areaChartData[0],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'USA',
-//     opacity: '0.8',
-//     type: 'SplineArea',
-//     width: '2',
-
-//   },
-//   {
-//     dataSource: areaChartData[1],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'France',
-//     opacity: '0.8',
-//     type: 'SplineArea',
-//     width: '2',
-//   },
-//   {
-//     dataSource: areaChartData[2],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Germany',
-//     opacity: '0.8',
-//     type: 'SplineArea',
-//     width: '2',
-//   },
-// ];
-
-// export const barChartData = [
-//   [
-//     { x: 'USA', y: 46 },
-//     { x: 'GBR', y: 27 },
-//     { x: 'CHN', y: 26 },
-//   ],
-//   [
-//     { x: 'USA', y: 37 },
-//     { x: 'GBR', y: 23 },
-//     { x: 'CHN', y: 18 },
-//   ],
-//   [
-//     { x: 'USA', y: 38 },
-//     { x: 'GBR', y: 17 },
-//     { x: 'CHN', y: 26 },
-//   ],
-// ];
-
-// export const barCustomSeries = [
-//   {
-//     dataSource: barChartData[0],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Gold',
-//     type: 'Column',
-//     marker: {
-//       dataLabel: {
-//         visible: true,
-//         position: 'Top',
-//         font: { fontWeight: '600', color: '#ffffff' },
-//       },
-//     },
-//   },
-//   {
-//     dataSource: barChartData[1],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Silver',
-//     type: 'Column',
-//     marker: {
-//       dataLabel: {
-//         visible: true,
-//         position: 'Top',
-//         font: { fontWeight: '600', color: '#ffffff' },
-//       },
-//     },
-//   },
-//   {
-//     dataSource: barChartData[2],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Bronze',
-//     type: 'Column',
-//     marker: {
-//       dataLabel: {
-//         visible: true,
-//         position: 'Top',
-//         font: { fontWeight: '600', color: '#ffffff' },
-//       },
-//     },
-//   },
-// ];
 export const colorMappingData = [
   [
     { x: 'Jan', y: 6.96 },
@@ -409,26 +248,6 @@ export const FinancialPrimaryYAxis = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
 };
-
-// export const LinePrimaryXAxis = {
-//   valueType: 'DateTime',
-//   labelFormat: 'y',
-//   intervalType: 'Years',
-//   edgeLabelPlacement: 'Shift',
-//   majorGridLines: { width: 0 },
-//   background: 'white',
-// };
-
-// export const LinePrimaryYAxis = {
-//   labelFormat: '{value}%',
-//   rangePadding: 'None',
-//   minimum: 0,
-//   maximum: 100,
-//   interval: 20,
-//   lineStyle: { width: 0 },
-//   majorTickLines: { width: 0 },
-//   minorTickLines: { width: 0 },
-// };
 
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
@@ -569,10 +388,10 @@ export const links = [
         name: 'employees',
         icon: <IoMdContacts />,
       },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
-      },
+      // {
+      //   name: 'customers',
+      //   icon: <RiContactsLine />,
+      // },
     ],
   },
   {
@@ -616,18 +435,18 @@ export const links = [
         name: 'pie',
         icon: <FiPieChart />,
       },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
+      // {
+      //   name: 'financial',
+      //   icon: <RiStockLine />,
+      // },
+      // {
+      //   name: 'color-mapping',
+      //   icon: <BsBarChart />,
+      // },
+      // {
+      //   name: 'pyramid',
+      //   icon: <GiLouvrePyramid />,
+      // },
       {
         name: 'stacked',
         icon: <AiOutlineBarChart />,
@@ -690,36 +509,6 @@ export const chatData = [
     time: '1:12 AM',
   },
 ];
-
-// export const earningData = [
-//   {
-//     icon: <MdOutlineSupervisorAccount />,
-//     amount: '39,354',
-//     percentage: '-4%',
-//     title: 'Customers',
-//     iconColor: '#03C9D7',
-//     iconBg: '#E5FAFB',
-//     pcColor: 'red-600',
-//   },
-//   {
-//     icon: <BsBoxSeam />,
-//     amount: '4,396',
-//     percentage: '+23%',
-//     title: 'Products',
-//     iconColor: 'rgb(255, 244, 229)',
-//     iconBg: 'rgb(254, 201, 15)',
-//     pcColor: 'green-600',
-//   },
-//   {
-//     icon: <FiBarChart />,
-//     amount: '423,39',
-//     percentage: '+38%',
-//     title: 'Sales',
-//     iconColor: 'rgb(228, 106, 118)',
-//     iconBg: 'rgb(255, 244, 229)',
-//     pcColor: 'green-600',
-//   }
-// ];
 
 export const recentTransactions = [
   {
@@ -3243,43 +3032,6 @@ export const SparklineAreaData = [
 
 ];
 
-// export const lineCustomSeries = [
-//   { dataSource: lineChartData[0],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Germany',
-//     width: '2',
-//     marker: { visible: true, width: 10, height: 10 },
-//     type: 'Line' },
-
-//   { dataSource: lineChartData[1],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'England',
-//     width: '2',
-//     marker: { visible: true, width: 10, height: 10 },
-//     type: 'Line' },
-
-//   { dataSource: lineChartData[2],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'India',
-//     width: '2',
-//     marker: { visible: true, width: 10, height: 10 },
-//     type: 'Line' },
-
-// ];
-
-// export const pieChartData = [
-//   { x: 'Labour', y: 18, text: '18%' },
-//   { x: 'Legal', y: 8, text: '8%' },
-//   { x: 'Production', y: 15, text: '15%' },
-//   { x: 'License', y: 11, text: '11%' },
-//   { x: 'Facilities', y: 18, text: '18%' },
-//   { x: 'Taxes', y: 14, text: '14%' },
-//   { x: 'Insurance', y: 16, text: '16%' },
-// ];
-
 export const contextMenuItems = [
   'AutoFit',
   'AutoFitAll',
@@ -3305,72 +3057,6 @@ export const ecomPieChartData = [
   { x: '2020', y: 18, text: '25%' },
   { x: '2021', y: 18, text: '25%' },
 ];
-
-// export const stackedChartData = [
-//   [
-//     { x: 'Jan', y: 111.1 },
-//     { x: 'Feb', y: 127.3 },
-//     { x: 'Mar', y: 143.4 },
-//     { x: 'Apr', y: 159.9 },
-//     { x: 'May', y: 159.9 },
-//     { x: 'Jun', y: 159.9 },
-//     { x: 'July', y: 159.9 },
-//   ],
-//   [
-//     { x: 'Jan', y: 111.1 },
-//     { x: 'Feb', y: 127.3 },
-//     { x: 'Mar', y: 143.4 },
-//     { x: 'Apr', y: 159.9 },
-//     { x: 'May', y: 159.9 },
-//     { x: 'Jun', y: 159.9 },
-//     { x: 'July', y: 159.9 },
-//   ],
-// ];
-
-// export const stackedCustomSeries = [
-
-//   { dataSource: stackedChartData[0],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Budget',
-//     type: 'StackingColumn',
-//     background: 'blue',
-//     fill: '#01BDAE'
-//   },
-
-//   { dataSource: stackedChartData[1],
-//     xName: 'x',
-//     yName: 'y',
-//     name: 'Expense',
-//     type: 'StackingColumn',
-//     background: 'red',
-//     fill: '#3774B8'
-//   },
-
-// ];
-
-// export const stackedPrimaryXAxis = {
-//   majorGridLines: { width: 0 },
-//   minorGridLines: { width: 0 },
-//   majorTickLines: { width: 0 },
-//   minorTickLines: { width: 0 },
-//   interval: 1,
-//   lineStyle: { width: 0 },
-//   labelIntersectAction: 'Rotate45',
-//   valueType: 'Category',
-// };
-
-// export const stackedPrimaryYAxis = {
-//   lineStyle: { width: 0 },
-//   minimum: 100,
-//   maximum: 400,
-//   interval: 100,
-//   majorTickLines: { width: 0 },
-//   majorGridLines: { width: 1 },
-//   minorGridLines: { width: 1 },
-//   minorTickLines: { width: 0 },
-//   labelFormat: '{value}',
-// };
 
 export const kanbanData = [
   {
