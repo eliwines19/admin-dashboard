@@ -49,6 +49,7 @@ const LineChart = () => {
   const LinePrimaryYAxis = {
     labelFormat: '{value}',
     rangePadding: 'None',
+    minimum: 0,
     interval: 1,
     lineStyle: { width: 0 },
     majorTickLines: { width: 0 },
