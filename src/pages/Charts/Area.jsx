@@ -15,8 +15,11 @@ const Area = () => {
 
     sales.forEach((sale) => {
       const date = new Date(sale.date);
+      const saleYear = date.getUTCFullYear()
       const monthIndex = date.getUTCMonth();
-      monthlyEarnings[monthIndex] += sale.productPrice;
+      if(saleYear === currentYear){
+        monthlyEarnings[monthIndex] += sale.productPrice;
+      }
     })
 
     const totalEarningsNum = parseFloat(totalEarnings().replace(/,/g, ''));
@@ -26,7 +29,7 @@ const Area = () => {
     })
 
     return monthlyEarningsPercentage.map((percentage, index) => {
-      return { x: new Date(currentYear, index, 1), y: percentage }
+      return { x: new Date(2024, index, 1), y: percentage }
     })
   }
 
