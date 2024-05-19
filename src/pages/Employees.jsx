@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FaPlus } from "react-icons/fa6";
 import { GridComponent, ColumnsDirective, ColumnDirective, Page, Search, Inject, Toolbar } from '@syncfusion/ej2-react-grids'
-import { employeesData, employeesGrid, eGrid } from '../data/dummy'
+import { eGrid } from '../data/dummy'
 import { Header } from '../components'
 import { NavLink } from 'react-router-dom'
 

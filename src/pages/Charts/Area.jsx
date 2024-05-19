@@ -19,10 +19,10 @@ const Area = () => {
       monthlyEarnings[monthIndex] += sale.productPrice;
     })
 
-    const totalEarningsNum = Number(totalEarnings())
+    const totalEarningsNum = parseFloat(totalEarnings().replace(/,/g, ''));
 
     const monthlyEarningsPercentage = monthlyEarnings.map((earnings) => {
-      return Number(totalEarningsNum) ? (earnings / totalEarningsNum) * 100 : 0
+      return totalEarningsNum ? (earnings / totalEarningsNum) * 100 : 0
     })
 
     return monthlyEarningsPercentage.map((percentage, index) => {

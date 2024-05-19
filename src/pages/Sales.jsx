@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FaPlus } from "react-icons/fa6";
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids'
-import { ordersData, salesGrid } from '../data/dummy'
+import { salesGrid } from '../data/dummy'
 import { Header } from '../components'
 import { NavLink } from 'react-router-dom'
 

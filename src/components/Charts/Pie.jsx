@@ -24,7 +24,7 @@ const Doughnut = ({ id, legendVisiblity, height }) => {
       }
     })
 
-    const totalSalesNum = Number(totalSales())
+    const totalSalesNum = parseFloat(totalSales().replace(/,/g, ''));
 
     const result = Object.entries(salesCount).map((sale) => {
       const percentage = totalSalesNum > 0 ? Math.round((sale[1] / totalSalesNum * 100)) : 0
