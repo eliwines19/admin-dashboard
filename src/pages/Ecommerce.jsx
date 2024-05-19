@@ -41,21 +41,12 @@ const Ecommerce = () => {
       <div className="flex gap-10 flex-wrap justify-center">
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
             <div className="flex justify-between">
-              <p className="font-semibold text-3xl">Recent Sales</p>
-              <div className='flex items-center gap-4'>
-                {/* <p className='flex items-center gap-2 text-gray-600 hover:drop-shadow-xl'>
-                  <span><GoDotFill /></span>
-                  <span>Expense</span>
-                </p>
-                <p className='flex items-center gap-2 text-green-400 hover:drop-shadow-xl'>
-                  <span><GoDotFill /></span>
-                  <span>Budget</span>
-                </p> */}
-              </div>
+              <p className="font-semibold text-3xl">Sales Overview</p>
             </div>
 
             <div className='mt-10 flex gap-10 flex-wrap '>
               <div className='border-r-1 border-color m-4 pr-10'>
+                <p className='font-semibold text-2xl mb-10 underline text-gray-400'>Recent Sales</p>
                 {recentSales().map((sale, index) => (
                   <div className='mb-8' key={index}>
                     <p>
@@ -76,45 +67,12 @@ const Ecommerce = () => {
                     />
                   </p>
                 </div>
-                  {/* <div>
-                    <p>
-                      <span className='text-3xl font-semibold'>$93,438</span>
-                      <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>23%</span>
-                    </p>
-                    <p className='text-gray-500 mt-1'>Budget</p>
-                  </div>
-                  <div className='mt-8'>
-                    <p>
-                      <span className='text-3xl font-semibold'>$48,438</span>
-                    </p>
-                    <p className='text-gray-500 mt-1'>Expense</p>
-                  </div>
-
-                  <div className='mt-5'>
-                    <SparkLine
-                      currentColor={currentColor}
-                      id="line-sparkline"
-                      type="Line"
-                      height="80px"
-                      width="250px"
-                      data={SparklineAreaData}
-                      color={currentColor}
-                    />
-                  </div>
-                  <div className='mt-10'>
-                    <Button
-                      color="white"
-                      bgColor={currentColor}
-                      text="Download Report"
-                      borderRadius="10px"
-                    />
-                  </div> */}
               </div>
 
               <div>
                 <Stacked
                   width="400px"
-                  height="360px"
+                  height="500px"
                 />
               </div>
             </div>

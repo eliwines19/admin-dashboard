@@ -41,7 +41,7 @@ const Stacked = ({ width, height }) => {
       dataSource: getChartData(),
       xName: 'x',
       yName: 'y',
-      name: 'Budget',
+      name: 'Earnings',
       type: 'StackingColumn',
       background: 'blue',
       fill: '#01BDAE'

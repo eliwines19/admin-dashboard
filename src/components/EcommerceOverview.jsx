@@ -4,7 +4,6 @@ import { useStateContext } from '../contexts/ContextProvider';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { BsBoxSeam } from 'react-icons/bs';
 import { FiBarChart } from 'react-icons/fi';
-import Button from './Button';
 import { NavLink } from 'react-router-dom';
 
 const EcommerceOverview = () => {
@@ -50,7 +49,7 @@ const EcommerceOverview = () => {
                 >
                     <div
                         key={item.title}
-                        className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md: w-56 p-4 pt-9 rounded-2xl"
+                        className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md: w-56 p-4  rounded-2xl text-center"
                     >
                         <button
                             type="button"
